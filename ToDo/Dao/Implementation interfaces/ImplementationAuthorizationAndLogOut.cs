@@ -12,8 +12,9 @@ namespace ToDo.Dao.Implementation_interfaces
     internal class ImplementationAuthorizationAndLogOut : IAuthorizationAndLogOutDao
     {
         SqlConnection sqlConnection = DBConnector.GetInstance().GetSqlConnection();
+        private static User AuthUser;
 
-        public void Authorization(User user)
+        public User Authorization(User user)
         {
             sqlConnection.Open();
 
@@ -24,13 +25,35 @@ namespace ToDo.Dao.Implementation_interfaces
 
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
-            while (sqlDataReader.Read())
+            if (!sqlDataReader.HasRows)
             {
+                sqlConnection.Close();
+                throw new Exception();
+            }
+
+
+            while (sqlDataReader.Read())
+            { 
                 user.Id = (long)sqlDataReader.GetValue(0);
                 user.Name = (string)sqlDataReader.GetValue(1);
             }
 
             sqlConnection.Close();
+
+            SetUser(user);
+
+
+            return user;
+        }
+
+        private void SetUser(User user)
+        {
+            AuthUser = user;
+        }
+
+        public static User GetAuthUser()
+        {
+            return AuthUser;
         }
 
         public void LogOut()

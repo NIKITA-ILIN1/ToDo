@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ToDo.Dao.Implementation_interfaces;
 using ToDo.Dao.Interfaces;
 using ToDo.Entity;
+using ToDo.Vizual;
 
 namespace ToDo
 {
@@ -22,13 +23,30 @@ namespace ToDo
 
         private void Authorization_Click(object sender, EventArgs e)
         {
-            User user = new User();
-            user.Login = LoginUser.Text;
-            user.Password = PasswordUser.Text;
+            User AuthUser = new User(0, "", LoginUser.Text, PasswordUser.Text);
 
-            if (true) {
+            try
+            {
+                AuthUser = new ImplementationAuthorizationAndLogOut().Authorization(AuthUser);
+                Tasks tasks = new Tasks();
+                this.Hide();
+                if(tasks.ShowDialog() == DialogResult.Cancel)
+                {
+                    this.Show();
+                }
+
+
 
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Check data");
+            }
+
+
+
+
+
         }
     }
 }

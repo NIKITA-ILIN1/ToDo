@@ -15,7 +15,7 @@ namespace ToDo.Entity
         private DBConnector()
         {
             sqlConnection = new SqlConnection("Server = localhost\\SQLEXPRESS;" +
-                "Database = MyDB;" +
+                "Database = myBD;" +
                 "Integrated Security = true;" +
                 "TrustServerCertificate = true;");
         }

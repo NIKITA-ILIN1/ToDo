@@ -9,7 +9,7 @@ namespace ToDo.Dao.Interfaces
 {
     internal interface IAuthorizationAndLogOutDao
     {
-        void Authorization(User user);
+        User Authorization(User user);
         void LogOut();
     }
 }
