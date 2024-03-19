@@ -17,9 +17,8 @@ namespace ToDo.Vizual
             InitializeComponent();
 
             for (int i = 1; i < 11; i++) {
-                flowLayoutPanel1.Controls.Add(new CurrentTask("Задача" + i.ToString()));
+                flowLayoutPanel1.Controls.Add(new CurrentTask("Задача " + i.ToString()));
             }
-
         }
 
         private void Tasks_FormClosing(object sender, FormClosingEventArgs e)

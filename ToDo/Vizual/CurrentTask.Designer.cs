@@ -48,7 +48,6 @@
             this.Controls.Add(this.NameTask);
             this.Name = "CurrentTask";
             this.Size = new System.Drawing.Size(303, 112);
-            this.Load += new System.EventHandler(this.CurrentTask_Load);
             this.Click += new System.EventHandler(this.CurrentTask_Click);
             this.ResumeLayout(false);
             this.PerformLayout();

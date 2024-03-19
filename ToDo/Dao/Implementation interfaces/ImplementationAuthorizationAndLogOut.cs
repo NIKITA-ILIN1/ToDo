@@ -31,7 +31,6 @@ namespace ToDo.Dao.Implementation_interfaces
                 throw new Exception();
             }
 
-
             while (sqlDataReader.Read())
             { 
                 user.Id = (long)sqlDataReader.GetValue(0);
@@ -42,18 +41,17 @@ namespace ToDo.Dao.Implementation_interfaces
 
             SetUser(user);
 
-
             return user;
-        }
-
-        private void SetUser(User user)
-        {
-            AuthUser = user;
         }
 
         public static User GetAuthUser()
         {
             return AuthUser;
+        }
+
+        private void SetUser(User user)
+        {
+            AuthUser = user;
         }
 
         public void LogOut()

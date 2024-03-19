@@ -150,6 +150,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Vizual\CurrentTask.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -167,12 +172,6 @@
     <Compile Include="Entity\User.cs" />
     <Compile Include="Dao\Interfaces\ITaskDao.cs" />
     <Compile Include="Dao\Interfaces\IUserDao.cs" />
-    <Compile Include="Vizual\InformationUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vizual\InformationUser.Designer.cs">
-      <DependentUpon>InformationUser.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vizual\InitialForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,20 +187,16 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Vizual\CurrentTask.resx">
       <DependentUpon>CurrentTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vizual\InformationUser.resx">
-      <DependentUpon>InformationUser.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Vizual\InitialForm.resx">
+      <DependentUpon>InitialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vizual\InitialForm.ru-RU.resx">
       <DependentUpon>InitialForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vizual\Tasks.resx">
@@ -219,7 +214,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\ShowPasswordIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HidePasswordIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

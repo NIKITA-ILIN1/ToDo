@@ -19,34 +19,41 @@ namespace ToDo
         public InitialForm()
         {
             InitializeComponent();
+
+            buttonShowHidePassword.BackgroundImage = Properties.Resources.ShowPasswordIcon;
         }
 
         private void Authorization_Click(object sender, EventArgs e)
         {
-            User AuthUser = new User(0, "", LoginUser.Text, PasswordUser.Text);
-
             try
             {
+                User AuthUser = new User(0, "", LoginUser.Text, PasswordUser.Text);
+
                 AuthUser = new ImplementationAuthorizationAndLogOut().Authorization(AuthUser);
+
                 Tasks tasks = new Tasks();
                 this.Hide();
-                if(tasks.ShowDialog() == DialogResult.Cancel)
-                {
+
+                if (tasks.ShowDialog() == DialogResult.Cancel) {
                     this.Show();
                 }
-
-
-
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Check data");
+                MessageBox.Show("Incorrect data");
             }
+        }
 
-
-
-
-
+        private void buttonShowHidePassword_Click(object sender, EventArgs e)
+        {
+            if (PasswordUser.UseSystemPasswordChar) {
+                PasswordUser.UseSystemPasswordChar = false;
+                buttonShowHidePassword.BackgroundImage = Properties.Resources.HidePasswordIcon;
+            }
+            else {
+                PasswordUser.UseSystemPasswordChar = true;
+                buttonShowHidePassword.BackgroundImage = Properties.Resources.ShowPasswordIcon;
+            }
         }
     }
 }

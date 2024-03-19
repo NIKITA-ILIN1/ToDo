@@ -19,11 +19,6 @@ namespace ToDo
             NameTask.Text = text;
         }
 
-        private void CurrentTask_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void CurrentTask_Click(object sender, EventArgs e)
         {
             MessageBox.Show(NameTask.Text);
