@@ -168,7 +168,7 @@
     <Compile Include="Dao\Implementation interfaces\UserFile.cs" />
     <Compile Include="Dao\Interfaces\IAuthorizationAndLogOutDao.cs" />
     <Compile Include="Entity\DBConnector.cs" />
-    <Compile Include="Entity\Task.cs" />
+    <Compile Include="Entity\TaskEntity.cs" />
     <Compile Include="Entity\User.cs" />
     <Compile Include="Dao\Interfaces\ITaskDao.cs" />
     <Compile Include="Dao\Interfaces\IUserDao.cs" />

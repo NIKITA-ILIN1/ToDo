@@ -18,21 +18,19 @@ namespace ToDo.Dao.Implementation_interfaces
         {
             sqlConnection.Open();
 
-            string sqlRequest = "SELECT * FROM users WHERE login = @login AND password = @password";
+            string sqlRequest = "SELECT * FROM Users WHERE login = @login AND password = @password";
             SqlCommand sqlCommand = new SqlCommand(sqlRequest, sqlConnection);
             sqlCommand.Parameters.Add("@login", System.Data.SqlDbType.VarChar).Value = user.Login;
             sqlCommand.Parameters.Add("@password", System.Data.SqlDbType.VarChar).Value = user.Password;
 
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
-            if (!sqlDataReader.HasRows)
-            {
+            if (!sqlDataReader.HasRows) {
                 sqlConnection.Close();
                 throw new Exception();
             }
 
-            while (sqlDataReader.Read())
-            { 
+            while (sqlDataReader.Read()) { 
                 user.Id = (long)sqlDataReader.GetValue(0);
                 user.Name = (string)sqlDataReader.GetValue(1);
             }
@@ -41,7 +39,7 @@ namespace ToDo.Dao.Implementation_interfaces
 
             SetUser(user);
 
-            return user;
+            return AuthUser;
         }
 
         public static User GetAuthUser()

@@ -31,7 +31,7 @@ namespace ToDo
 
                 AuthUser = new ImplementationAuthorizationAndLogOut().Authorization(AuthUser);
 
-                Tasks tasks = new Tasks();
+                Vizual.Tasks tasks = new Vizual.Tasks();
                 this.Hide();
 
                 if (tasks.ShowDialog() == DialogResult.Cancel) {

@@ -64,7 +64,7 @@
             // Authorization
             // 
             this.Authorization.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Authorization.Location = new System.Drawing.Point(120, 203);
+            this.Authorization.Location = new System.Drawing.Point(120, 155);
             this.Authorization.Name = "Authorization";
             this.Authorization.Size = new System.Drawing.Size(137, 23);
             this.Authorization.TabIndex = 2;
@@ -76,7 +76,7 @@
             // 
             this.Registration.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Registration.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Registration.Location = new System.Drawing.Point(120, 149);
+            this.Registration.Location = new System.Drawing.Point(120, 213);
             this.Registration.Name = "Registration";
             this.Registration.Size = new System.Drawing.Size(137, 23);
             this.Registration.TabIndex = 3;

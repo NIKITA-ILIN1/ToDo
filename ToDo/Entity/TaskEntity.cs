@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ToDo.Entity
 {
-    internal class Task
+    internal class TaskEntity
     {
         public long Id { get; set; }         
         public long UserId { get; set; }
@@ -16,7 +16,12 @@ namespace ToDo.Entity
         public DateTime TimeStart { get; set; }
         public DateTime TimeStop { get; set; }
 
-        public Task(long id, long userId, string description, string status, DateTime timeStart, DateTime timeStop)
+        public TaskEntity()
+        {
+
+        }
+
+        public TaskEntity(long id, long userId, string description, string status, DateTime timeStart, DateTime timeStop)
         {
             Id = id;
             UserId = userId;

@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ToDo.Entity;
 
 namespace ToDo.Dao.Interfaces
 {
     internal interface ITaskDao
     {
-        void CreateTask(Task task);
-        Task ReadTask(string description);
-        void UpdateStatusTask(Task task);
-        void DeleteTask(Task task);
+        void CreateTask(TaskEntity task);
+        TaskEntity ReadTask(string description);
+        void UpdateStatusTask(TaskEntity task);
+        void DeleteTask(TaskEntity task);
     }
 }
