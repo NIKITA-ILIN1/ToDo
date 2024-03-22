@@ -162,10 +162,10 @@
       <DependentUpon>CurrentTask.cs</DependentUpon>
     </Compile>
     <Compile Include="Dao\Implementation interfaces\ImplementationAuthorizationAndLogOut.cs" />
-    <Compile Include="Dao\Implementation interfaces\TaskDataBase.cs" />
-    <Compile Include="Dao\Implementation interfaces\TaskFile.cs" />
-    <Compile Include="Dao\Implementation interfaces\UserDataBase.cs" />
-    <Compile Include="Dao\Implementation interfaces\UserFile.cs" />
+    <Compile Include="Dao\Implementation interfaces\Implementation TaskEntity\TaskDataBase.cs" />
+    <Compile Include="Dao\Implementation interfaces\Implementation TaskEntity\TaskFile.cs" />
+    <Compile Include="Dao\Implementation interfaces\Implementation User\UserDataBase.cs" />
+    <Compile Include="Dao\Implementation interfaces\Implementation User\UserFile.cs" />
     <Compile Include="Dao\Interfaces\IAuthorizationAndLogOutDao.cs" />
     <Compile Include="Entity\DBConnector.cs" />
     <Compile Include="Entity\TaskEntity.cs" />

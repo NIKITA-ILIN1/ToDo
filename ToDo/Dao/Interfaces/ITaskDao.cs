@@ -10,7 +10,7 @@ namespace ToDo.Dao.Interfaces
     internal interface ITaskDao
     {
         void CreateTask(TaskEntity task);
-        TaskEntity ReadTask(string description);
+        List <TaskEntity> ReadTask(TaskEntity task);
         void UpdateStatusTask(TaskEntity task);
         void DeleteTask(TaskEntity task);
     }

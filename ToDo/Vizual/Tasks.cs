@@ -23,13 +23,16 @@ namespace ToDo.Vizual
         {
             InitializeComponent();
 
-            User AuthUser = ImplementationAuthorizationAndLogOut.GetAuthUser();
-
-            for (int i = 1; i < 11; i++) {
-                flowLayoutPanel1.Controls.Add(new CurrentTask("Задача " + i.ToString()));
-            }
-
             taskDao = new TaskDataBase();
+            TaskEntity taskEntity = new TaskEntity();
+            taskEntity.UserId = AuthUser.Id;
+
+            List<TaskEntity> tasks = taskDao.ReadTask(taskEntity);
+
+            foreach (TaskEntity task in tasks)
+            {
+                flowLayoutPanel1.Controls.Add(new CurrentTask(task.Id, task.Name, task.Description, task.Status, task.TimeStart, task.TimeStop));
+            }
         }
 
         private void Tasks_FormClosing(object sender, FormClosingEventArgs e)

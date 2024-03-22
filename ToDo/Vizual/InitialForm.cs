@@ -31,16 +31,16 @@ namespace ToDo
 
                 AuthUser = new ImplementationAuthorizationAndLogOut().Authorization(AuthUser);
 
-                Vizual.Tasks tasks = new Vizual.Tasks();
+                Tasks tasks = new Tasks();    
                 this.Hide();
 
                 if (tasks.ShowDialog() == DialogResult.Cancel) {
                     this.Show();
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Incorrect data");
+                MessageBox.Show(ex.Message);
             }
         }
 

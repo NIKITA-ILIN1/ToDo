@@ -15,7 +15,7 @@ namespace ToDo.Dao.Implementation_interfaces
             throw new NotImplementedException();
         }
 
-        public TaskEntity ReadTask(string description)
+        public List<TaskEntity> ReadTask(TaskEntity task)
         {
             throw new NotImplementedException();
         }

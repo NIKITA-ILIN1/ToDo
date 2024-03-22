@@ -12,11 +12,13 @@ namespace ToDo
 {
     public partial class CurrentTask : UserControl
     {
-        public CurrentTask(string text)
+        //public long 
+        public string TaskName { get; set; }
+        //public 
+
+        public CurrentTask(long id, string name, string description, string status, DateTime timeStart, DateTime timeStop)
         {
             InitializeComponent();
-
-            NameTask.Text = text;
         }
 
         private void CurrentTask_Click(object sender, EventArgs e)
