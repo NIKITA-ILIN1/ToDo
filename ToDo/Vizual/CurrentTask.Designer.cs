@@ -37,7 +37,7 @@
             // NameTask
             // 
             this.NameTask.AutoSize = true;
-            this.NameTask.Location = new System.Drawing.Point(96, 15);
+            this.NameTask.Location = new System.Drawing.Point(91, 35);
             this.NameTask.Name = "NameTask";
             this.NameTask.Size = new System.Drawing.Size(95, 13);
             this.NameTask.TabIndex = 0;
@@ -46,7 +46,7 @@
             // StatusTask
             // 
             this.StatusTask.AutoSize = true;
-            this.StatusTask.Location = new System.Drawing.Point(41, 61);
+            this.StatusTask.Location = new System.Drawing.Point(31, 126);
             this.StatusTask.Name = "StatusTask";
             this.StatusTask.Size = new System.Drawing.Size(35, 13);
             this.StatusTask.TabIndex = 1;
@@ -55,7 +55,7 @@
             // TimeStartTask
             // 
             this.TimeStartTask.AutoSize = true;
-            this.TimeStartTask.Location = new System.Drawing.Point(168, 48);
+            this.TimeStartTask.Location = new System.Drawing.Point(238, 149);
             this.TimeStartTask.Name = "TimeStartTask";
             this.TimeStartTask.Size = new System.Drawing.Size(35, 13);
             this.TimeStartTask.TabIndex = 2;
@@ -64,7 +64,7 @@
             // TimeStopTask
             // 
             this.TimeStopTask.AutoSize = true;
-            this.TimeStopTask.Location = new System.Drawing.Point(168, 80);
+            this.TimeStopTask.Location = new System.Drawing.Point(238, 88);
             this.TimeStopTask.Name = "TimeStopTask";
             this.TimeStopTask.Size = new System.Drawing.Size(35, 13);
             this.TimeStopTask.TabIndex = 3;
@@ -75,13 +75,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(344, 211);
             this.Controls.Add(this.TimeStopTask);
             this.Controls.Add(this.TimeStartTask);
             this.Controls.Add(this.StatusTask);
             this.Controls.Add(this.NameTask);
             this.Name = "CurrentTask";
-            this.Size = new System.Drawing.Size(303, 112);
-            this.Click += new System.EventHandler(this.CurrentTask_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

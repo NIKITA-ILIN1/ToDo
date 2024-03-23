@@ -42,7 +42,7 @@
             this.LoginUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.LoginUser.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.LoginUser.Location = new System.Drawing.Point(101, 37);
+            this.LoginUser.Location = new System.Drawing.Point(101, 95);
             this.LoginUser.Name = "LoginUser";
             this.LoginUser.Size = new System.Drawing.Size(178, 20);
             this.LoginUser.TabIndex = 0;
@@ -54,7 +54,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.PasswordUser.BackColor = System.Drawing.SystemColors.HighlightText;
             this.PasswordUser.HideSelection = false;
-            this.PasswordUser.Location = new System.Drawing.Point(101, 92);
+            this.PasswordUser.Location = new System.Drawing.Point(101, 141);
             this.PasswordUser.Name = "PasswordUser";
             this.PasswordUser.Size = new System.Drawing.Size(178, 20);
             this.PasswordUser.TabIndex = 1;
@@ -64,11 +64,11 @@
             // Authorization
             // 
             this.Authorization.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Authorization.Location = new System.Drawing.Point(120, 155);
+            this.Authorization.Location = new System.Drawing.Point(120, 210);
             this.Authorization.Name = "Authorization";
             this.Authorization.Size = new System.Drawing.Size(137, 23);
             this.Authorization.TabIndex = 2;
-            this.Authorization.Text = "Авторизация";
+            this.Authorization.Text = "Sign in";
             this.Authorization.UseVisualStyleBackColor = false;
             this.Authorization.Click += new System.EventHandler(this.Authorization_Click);
             // 
@@ -76,35 +76,37 @@
             // 
             this.Registration.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Registration.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Registration.Location = new System.Drawing.Point(120, 213);
+            this.Registration.Location = new System.Drawing.Point(120, 261);
             this.Registration.Name = "Registration";
             this.Registration.Size = new System.Drawing.Size(137, 23);
             this.Registration.TabIndex = 3;
-            this.Registration.Text = "Регистрация";
+            this.Registration.Text = "Sign up";
             this.Registration.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 40);
+            this.label1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.label1.Location = new System.Drawing.Point(55, 95);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Логин";
+            this.label1.Text = "Login";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(48, 95);
+            this.label2.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.label2.Location = new System.Drawing.Point(48, 144);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Пароль";
+            this.label2.Text = "Password";
             // 
             // buttonShowHidePassword
             // 
             this.buttonShowHidePassword.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.buttonShowHidePassword.Location = new System.Drawing.Point(275, 92);
+            this.buttonShowHidePassword.Location = new System.Drawing.Point(276, 141);
             this.buttonShowHidePassword.Name = "buttonShowHidePassword";
             this.buttonShowHidePassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.buttonShowHidePassword.Size = new System.Drawing.Size(20, 20);
@@ -132,7 +134,7 @@
             this.Name = "InitialForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Начальная форма";
+            this.Text = "ToDo";
             this.ResumeLayout(false);
             this.PerformLayout();
 

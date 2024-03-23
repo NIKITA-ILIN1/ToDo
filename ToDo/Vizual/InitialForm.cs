@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,7 @@ using ToDo.Vizual;
 
 namespace ToDo
 {
-    public partial class InitialForm : Form
+    public partial class InitialForm : MaterialForm
     {
         public InitialForm()
         {

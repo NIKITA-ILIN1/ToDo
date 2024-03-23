@@ -18,11 +18,12 @@ namespace ToDo.Dao.Implementation_interfaces
         {
             sqlConnection.Open();
 
-            string sqlRequest = "INSERT INTO Tasks (user_id, name, status, time_start, time_stop)" + 
-                "VALUES (@user_id, @name, @status, @time_start, @time_stop)";
+            string sqlRequest = "INSERT INTO Tasks (user_id, name, description, status, time_start, time_stop)" +
+                "VALUES (@user_id, @name, @description, @status, @time_start, @time_stop)";
             SqlCommand sqlCommand = new SqlCommand(sqlRequest, sqlConnection);
             sqlCommand.Parameters.Add("@user_id", System.Data.SqlDbType.BigInt).Value = task.UserId;
-            sqlCommand.Parameters.Add("@name", System.Data.SqlDbType.VarChar).Value = task.Description;
+            sqlCommand.Parameters.Add("@name", System.Data.SqlDbType.VarChar).Value = task.Name;
+            sqlCommand.Parameters.Add("@description", System.Data.SqlDbType.VarChar).Value = task.Description;
             sqlCommand.Parameters.Add("@status", System.Data.SqlDbType.VarChar).Value = task.Status;
             sqlCommand.Parameters.Add("@time_start", System.Data.SqlDbType.DateTime).Value = task.TimeStart;
             sqlCommand.Parameters.Add("@time_stop", System.Data.SqlDbType.DateTime).Value = task.TimeStop;
@@ -50,17 +51,18 @@ namespace ToDo.Dao.Implementation_interfaces
             {
                 SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
-                if (!sqlDataReader.HasRows) {
-                    sqlConnection.Close();
-                    throw new Exception();
-                }
-
                 List<TaskEntity> tasks = new List<TaskEntity>();
 
-                while (sqlDataReader.Read())
-                {
+                if (!sqlDataReader.HasRows) {
+                    sqlConnection.Close();
+
+                    return tasks;
+                }
+
+                while (sqlDataReader.Read()) {
                     tasks.Add(new TaskEntity((long)sqlDataReader.GetValue(0),
                         (long)sqlDataReader.GetValue(1),
+                        (string)sqlDataReader.GetValue(1),
                         (string)sqlDataReader.GetValue(2),
                         (string)sqlDataReader.GetValue(3),
                         (DateTime)sqlDataReader.GetValue(4),
@@ -85,7 +87,7 @@ namespace ToDo.Dao.Implementation_interfaces
         {
             sqlConnection.Open();
 
-            string sqlRequest = "SELECT FROM Users WHERE id = @id";
+            string sqlRequest = "SELECT FROM Tasks WHERE id = @id";
             SqlCommand sqlCommand = new SqlCommand(sqlRequest, sqlConnection);
             sqlCommand.Parameters.Add("@id", System.Data.SqlDbType.VarChar).Value = task.Id;
 

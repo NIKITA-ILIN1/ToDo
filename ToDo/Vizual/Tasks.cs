@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +25,7 @@ namespace ToDo.Vizual
             InitializeComponent();
 
             taskDao = new TaskDataBase();
+
             TaskEntity taskEntity = new TaskEntity();
             taskEntity.UserId = AuthUser.Id;
 
@@ -31,21 +33,16 @@ namespace ToDo.Vizual
 
             foreach (TaskEntity task in tasks)
             {
-                flowLayoutPanel1.Controls.Add(new CurrentTask(task.Id, task.Name, task.Description, task.Status, task.TimeStart, task.TimeStop));
+                flowLayoutPanel1.Controls.Add(new CurrentTask(task.Id, task.Name, task.Status, task.TimeStart, task.TimeStop));
             }
-        }
-
-        private void Tasks_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
         }
 
         private void SaveTask_Click(object sender, EventArgs e)
         {
             TaskEntity task = new TaskEntity();
             task.UserId = AuthUser.Id;
-            task.Description = NameTask.Text;
-            task.Status = StatusTask.Text;
+            task.Name = NameTask.Text;
+            task.Description = DescriptionTask.Text;
             task.TimeStart = TimeStart.Value;
             task.TimeStop = TimeStop.Value;
 
@@ -53,7 +50,7 @@ namespace ToDo.Vizual
             {
                 taskDao.CreateTask(task);
 
-                flowLayoutPanel1.Controls.Add(new CurrentTask(task.Description));
+                flowLayoutPanel1.Controls.Add(new CurrentTask(task.Id, task.Name, task.Status, task.TimeStart, task.TimeStop));
 
                 MessageBox.Show("OK");
             }
@@ -61,6 +58,11 @@ namespace ToDo.Vizual
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Tasks_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
         }
     }
 }

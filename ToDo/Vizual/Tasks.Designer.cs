@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.NameTask = new System.Windows.Forms.TextBox();
-            this.StatusTask = new System.Windows.Forms.ComboBox();
-            this.TimeStart = new System.Windows.Forms.DateTimePicker();
-            this.TimeStop = new System.Windows.Forms.DateTimePicker();
             this.SaveTask = new System.Windows.Forms.Button();
+            this.TimeStop = new System.Windows.Forms.DateTimePicker();
+            this.TimeStart = new System.Windows.Forms.DateTimePicker();
+            this.NameTask = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.DescriptionTask = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -49,10 +49,10 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.DescriptionTask);
             this.splitContainer1.Panel1.Controls.Add(this.SaveTask);
             this.splitContainer1.Panel1.Controls.Add(this.TimeStop);
             this.splitContainer1.Panel1.Controls.Add(this.TimeStart);
-            this.splitContainer1.Panel1.Controls.Add(this.StatusTask);
             this.splitContainer1.Panel1.Controls.Add(this.NameTask);
             // 
             // splitContainer1.Panel2
@@ -61,6 +61,37 @@
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 266;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // SaveTask
+            // 
+            this.SaveTask.Location = new System.Drawing.Point(66, 357);
+            this.SaveTask.Name = "SaveTask";
+            this.SaveTask.Size = new System.Drawing.Size(75, 23);
+            this.SaveTask.TabIndex = 5;
+            this.SaveTask.Text = "Сохранить";
+            this.SaveTask.UseVisualStyleBackColor = true;
+            this.SaveTask.Click += new System.EventHandler(this.SaveTask_Click);
+            // 
+            // TimeStop
+            // 
+            this.TimeStop.Location = new System.Drawing.Point(12, 271);
+            this.TimeStop.Name = "TimeStop";
+            this.TimeStop.Size = new System.Drawing.Size(239, 20);
+            this.TimeStop.TabIndex = 4;
+            // 
+            // TimeStart
+            // 
+            this.TimeStart.Location = new System.Drawing.Point(12, 226);
+            this.TimeStart.Name = "TimeStart";
+            this.TimeStart.Size = new System.Drawing.Size(239, 20);
+            this.TimeStart.TabIndex = 3;
+            // 
+            // NameTask
+            // 
+            this.NameTask.Location = new System.Drawing.Point(12, 12);
+            this.NameTask.Name = "NameTask";
+            this.NameTask.Size = new System.Drawing.Size(239, 20);
+            this.NameTask.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
@@ -71,48 +102,13 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(530, 450);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // NameTask
+            // DescriptionTask
             // 
-            this.NameTask.Location = new System.Drawing.Point(12, 12);
-            this.NameTask.Name = "NameTask";
-            this.NameTask.Size = new System.Drawing.Size(239, 20);
-            this.NameTask.TabIndex = 0;
-            // 
-            // StatusTask
-            // 
-            this.StatusTask.FormattingEnabled = true;
-            this.StatusTask.Items.AddRange(new object[] {
-            "Новая\t",
-            "В работе\t",
-            "Завершено"});
-            this.StatusTask.Location = new System.Drawing.Point(12, 60);
-            this.StatusTask.Name = "StatusTask";
-            this.StatusTask.Size = new System.Drawing.Size(239, 21);
-            this.StatusTask.TabIndex = 2;
-            // 
-            // TimeStart
-            // 
-            this.TimeStart.Location = new System.Drawing.Point(12, 116);
-            this.TimeStart.Name = "TimeStart";
-            this.TimeStart.Size = new System.Drawing.Size(239, 20);
-            this.TimeStart.TabIndex = 3;
-            // 
-            // TimeStop
-            // 
-            this.TimeStop.Location = new System.Drawing.Point(12, 170);
-            this.TimeStop.Name = "TimeStop";
-            this.TimeStop.Size = new System.Drawing.Size(239, 20);
-            this.TimeStop.TabIndex = 4;
-            // 
-            // SaveTask
-            // 
-            this.SaveTask.Location = new System.Drawing.Point(72, 227);
-            this.SaveTask.Name = "SaveTask";
-            this.SaveTask.Size = new System.Drawing.Size(75, 23);
-            this.SaveTask.TabIndex = 5;
-            this.SaveTask.Text = "Сохранить";
-            this.SaveTask.UseVisualStyleBackColor = true;
-            this.SaveTask.Click += new System.EventHandler(this.SaveTask_Click);
+            this.DescriptionTask.Location = new System.Drawing.Point(12, 51);
+            this.DescriptionTask.Multiline = true;
+            this.DescriptionTask.Name = "DescriptionTask";
+            this.DescriptionTask.Size = new System.Drawing.Size(239, 158);
+            this.DescriptionTask.TabIndex = 6;
             // 
             // Tasks
             // 
@@ -141,9 +137,9 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TextBox NameTask;
-        private System.Windows.Forms.ComboBox StatusTask;
         private System.Windows.Forms.Button SaveTask;
         private System.Windows.Forms.DateTimePicker TimeStop;
         private System.Windows.Forms.DateTimePicker TimeStart;
+        private System.Windows.Forms.TextBox DescriptionTask;
     }
 }
