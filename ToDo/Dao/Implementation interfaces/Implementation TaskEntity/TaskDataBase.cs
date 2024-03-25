@@ -43,7 +43,7 @@ namespace ToDo.Dao.Implementation_interfaces
         {
             sqlConnection.Open();
 
-            string sqlRequest = "SELECT * FROM Tasks WHERE user_id = @user_id";
+            string sqlRequest = "SELECT Tasks.id, Tasks.user_id, Tasks.name, Tasks.description, Statuses.name AS status, Tasks.time_start, Tasks.time_stop, from "
             SqlCommand sqlCommand = new SqlCommand(sqlRequest, sqlConnection);
             sqlCommand.Parameters.Add("@user_id", System.Data.SqlDbType.VarChar).Value = task.UserId;
 

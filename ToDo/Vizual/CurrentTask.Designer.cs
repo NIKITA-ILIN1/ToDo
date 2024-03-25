@@ -37,7 +37,7 @@
             // NameTask
             // 
             this.NameTask.AutoSize = true;
-            this.NameTask.Location = new System.Drawing.Point(91, 35);
+            this.NameTask.Location = new System.Drawing.Point(119, 34);
             this.NameTask.Name = "NameTask";
             this.NameTask.Size = new System.Drawing.Size(95, 13);
             this.NameTask.TabIndex = 0;
