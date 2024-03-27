@@ -38,6 +38,8 @@ namespace ToDo.Dao.Implementation_interfaces
             try {
                 sqlConnection.Open();
 
+
+
                 string sqlRequest = "SELECT * FROM Tasks " +
 
                     "JOIN Users ON Tasks.user_id = @user_id";
