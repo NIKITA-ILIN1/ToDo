@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IdentityModel.Protocols.WSTrust;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ToDo.Dao.Interfaces
 {
@@ -11,6 +7,6 @@ namespace ToDo.Dao.Interfaces
     {
         Status GetStatusById(int id);
 
-        List<Status> GetStatus ();
+        List<Status> GetListStatus ();
     }
 }
